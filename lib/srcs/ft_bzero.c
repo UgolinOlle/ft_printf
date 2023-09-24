@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugolin-olle <ugolin-olle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 14:28:49 by ugolin-olle       #+#    #+#             */
-/*   Updated: 2023/09/24 22:03:46 by ugolin-olle      ###   ########.fr       */
+/*   Created: 2023/08/28 17:56:49 by ugolin-olle       #+#    #+#             */
+/*   Updated: 2023/08/29 22:10:28 by ugolin-olle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-// -- External library
-# include "libft.h"
-# include <stdarg.h>
-# include <unistd.h>
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int	i;
+	unsigned char	*res;
 
-// -- Main function
-int	ft_printf(const char *string, ...);
-
-// -- String
-int	ft_putstr(char *s);
-int	ft_putchar(char c);
-int	ft_putptr(void *ptr);
-
-// -- Integer
-int	ft_put_unnbr(unsigned int nbr);
-int	ft_putnbr(int nbr);
-int	ft_puthexa(unsigned int nbr, char *base);
-
-#endif
+	i = 0;
+	res = s;
+	while (i < n)
+	{
+		res[i] = '\0';
+		i++;
+	}
+}

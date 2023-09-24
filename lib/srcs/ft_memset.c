@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugolin-olle <ugolin-olle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 14:28:49 by ugolin-olle       #+#    #+#             */
-/*   Updated: 2023/09/24 22:03:46 by ugolin-olle      ###   ########.fr       */
+/*   Created: 2023/08/28 15:24:30 by ugolin-olle       #+#    #+#             */
+/*   Updated: 2023/08/28 15:42:08 by ugolin-olle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-// -- External library
-# include "libft.h"
-# include <stdarg.h>
-# include <unistd.h>
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*p;
 
-// -- Main function
-int	ft_printf(const char *string, ...);
-
-// -- String
-int	ft_putstr(char *s);
-int	ft_putchar(char c);
-int	ft_putptr(void *ptr);
-
-// -- Integer
-int	ft_put_unnbr(unsigned int nbr);
-int	ft_putnbr(int nbr);
-int	ft_puthexa(unsigned int nbr, char *base);
-
-#endif
+	p = b;
+	while (len--)
+	{
+		*p++ = (unsigned char)c;
+	}
+	return (b);
+}

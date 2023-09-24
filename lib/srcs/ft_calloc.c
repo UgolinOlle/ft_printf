@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugolin-olle <ugolin-olle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 14:28:49 by ugolin-olle       #+#    #+#             */
-/*   Updated: 2023/09/24 22:03:46 by ugolin-olle      ###   ########.fr       */
+/*   Created: 2023/09/05 10:09:49 by ugolin-olle       #+#    #+#             */
+/*   Updated: 2023/09/11 11:26:06 by ugolin-olle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-// -- External library
-# include "libft.h"
-# include <stdarg.h>
-# include <unistd.h>
+void	ft_bzero(void *s, size_t n);
 
-// -- Main function
-int	ft_printf(const char *string, ...);
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*res;
 
-// -- String
-int	ft_putstr(char *s);
-int	ft_putchar(char c);
-int	ft_putptr(void *ptr);
-
-// -- Integer
-int	ft_put_unnbr(unsigned int nbr);
-int	ft_putnbr(int nbr);
-int	ft_puthexa(unsigned int nbr, char *base);
-
-#endif
+	if (!count || !size)
+	{
+		count = 1;
+		size = 1;
+	}
+	if (65535 / count < size)
+		return (NULL);
+	res = (void *)malloc(count * size);
+	if (res == 0)
+		return (res);
+	ft_bzero(res, count * size);
+	return (res);
+}

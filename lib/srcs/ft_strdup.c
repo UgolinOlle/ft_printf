@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugolin-olle <ugolin-olle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 14:28:49 by ugolin-olle       #+#    #+#             */
-/*   Updated: 2023/09/24 22:03:46 by ugolin-olle      ###   ########.fr       */
+/*   Created: 2023/08/30 22:55:34 by ugolin-olle       #+#    #+#             */
+/*   Updated: 2023/09/11 15:21:40 by ugolin-olle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-// -- External library
-# include "libft.h"
-# include <stdarg.h>
-# include <unistd.h>
+size_t	ft_strlen(const char *s);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
-// -- Main function
-int	ft_printf(const char *string, ...);
+char	*ft_strdup(const char *s1)
+{
+	size_t	i;
+	char	*res;
 
-// -- String
-int	ft_putstr(char *s);
-int	ft_putchar(char c);
-int	ft_putptr(void *ptr);
-
-// -- Integer
-int	ft_put_unnbr(unsigned int nbr);
-int	ft_putnbr(int nbr);
-int	ft_puthexa(unsigned int nbr, char *base);
-
-#endif
+	i = ft_strlen(s1);
+	res = (char *)malloc(sizeof(char) * (i + 1));
+	if (!(res))
+		return (NULL);
+	ft_memmove(res, s1, i);
+	res[i] = '\0';
+	return (res);
+}
