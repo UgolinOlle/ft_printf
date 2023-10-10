@@ -50,13 +50,13 @@ The ft_printf function supports a subset of the format specifiers used by the st
 To compile the ft_printf library, run the following commands:
 
 1. Clone this repository:
-```
+```bash
 git clone https://github.com/your_username/ft_printf.git
 ```
 2. Include the `ft_printf.h` header file in your C file.
 3. Compile your program with:
 
-```
+```bash
 make
 ```
 This will generate the `libftprintf.a` library, which you can link with your C programs as mentioned in the usage section.
