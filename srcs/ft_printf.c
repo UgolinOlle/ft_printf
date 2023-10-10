@@ -6,7 +6,7 @@
 /*   By: ugolin-olle <ugolin-olle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:31:37 by ugolin-olle       #+#    #+#             */
-/*   Updated: 2023/09/24 21:55:50 by ugolin-olle      ###   ########.fr       */
+/*   Updated: 2023/10/04 14:46:20 by ugolin-olle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,11 @@ int	ft_printf(const char *string, ...)
 	}
 	va_end(args);
 	return (res);
+}
+
+int	main(void)
+{
+	ft_printf("%d\n", "12");
+	printf("%d\n", 12);
+	return (0);
 }

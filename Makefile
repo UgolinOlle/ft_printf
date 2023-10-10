@@ -6,7 +6,7 @@
 #    By: ugolin-olle <ugolin-olle@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 11:29:12 by ugolin-olle       #+#    #+#              #
-#    Updated: 2023/09/24 17:21:18 by ugolin-olle      ###   ########.fr        #
+#    Updated: 2023/10/04 14:46:30 by ugolin-olle      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@cp $(LIBDIR)/libft.a .
 	@mv libft.a $(NAME)
-	# @$(CC) $(CFLAGS) -I $(HDRDIR) $(OBJS) $(LIBDIR)/libft.a -o $(NAME)
-	@$(AR) $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) -I $(HDRDIR) $(OBJS) $(LIBDIR)/libft.a -o $(NAME)
+	# @$(AR) $(NAME) $(OBJS)
 	@echo "$(GREEN)ft_printf has been successfully compiled$(DEFCOLOR)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
